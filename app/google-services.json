@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "25228353907",
+    "project_id": "aridosmanolo-ae1a0",
+    "storage_bucket": "aridosmanolo-ae1a0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:25228353907:android:6e4c33d22732935beae506",
+        "android_client_info": {
+          "package_name": "com.example.aridosmanolo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDEAfNcOFIDIALPhGfmZZJaXz1XngHrl1A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
