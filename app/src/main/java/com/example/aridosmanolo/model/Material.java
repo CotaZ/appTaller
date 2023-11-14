@@ -6,33 +6,33 @@ public class Material {
 
     public Material(){}
 
-    public Material(String material, String valor, String cantidad) {
-        Material = material;
-        Valor = valor;
-        Cantidad = cantidad;
+    public Material(String Material, String Valor, String Cantidad) {
+        this.Material = Material;
+        this.Valor = Valor;
+        this.Cantidad = Cantidad;
     }
 
     public String getMaterial() {
         return Material;
     }
 
-    public void setMaterial(String material) {
-        Material = material;
+    public void setMaterial(String Material) {
+        Material = Material;
     }
 
     public String getValor() {
         return Valor;
     }
 
-    public void setValor(String valor) {
-        Valor = valor;
+    public void setValor(String Valor) {
+        Valor = Valor;
     }
 
     public String getCantidad() {
         return Cantidad;
     }
 
-    public void setCantidad(String cantidad) {
-        Cantidad = cantidad;
+    public void setCantidad(String Cantidad) {
+        Cantidad = Cantidad;
     }
 }

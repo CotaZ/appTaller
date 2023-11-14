@@ -1,5 +1,8 @@
 package com.example.aridosmanolo;
 
+import static android.content.ContentValues.TAG;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -7,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -14,14 +18,16 @@ import android.widget.TextView;
 import com.example.aridosmanolo.adapter.MaterialAdapter;
 import com.example.aridosmanolo.model.Material;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 public class Inventario extends AppCompatActivity {
 
-    private int Arena,Gravilla,Ripio,Maicillo,Bolones,Cemento,Bol9,Bol14,Bol19;
-    private TextView text_Arena,text_Gravilla,text_Ripio,text_Maicillo,text_Bolones,text_Cemento,text_Bol9,text_Bol14,text_Bol19;
-    private Button Editar,Volver,Pedido,Mapa,Calculadora,Menu;
+    private Button Volver,Pedido,Mapa,Calculadora,Menu;
     private RecyclerView mRecycler;
     private MaterialAdapter mAdapter;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -38,7 +44,7 @@ public class Inventario extends AppCompatActivity {
         mAdapter.stopListening();
     }
 
-    @SuppressLint({"MissingInflatedId", "WrongViewCast"})
+    @SuppressLint({"MissingInflatedId"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,7 +64,6 @@ public class Inventario extends AppCompatActivity {
         Mapa = findViewById(R.id.btn_Mapa);
         Calculadora = findViewById(R.id.btn_Calculadora);
         Menu = findViewById(R.id.btn_Menu);
-        //Editar = findViewById(R.id.btn_Edit);
 
         Pedido.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -95,6 +100,22 @@ public class Inventario extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        db.collection("Inventario")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()){
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                Log.d(TAG, document.getId() + " => " + document.getData());
+
+                            }
+                        }else {
+                            Log.w(TAG, "Error getting documents.", task.getException());
+                        }
+                    }
+                });
 
     }
 }

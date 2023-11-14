@@ -2,13 +2,15 @@ package com.example.aridosmanolo.model;
 
 public class Pedido {
 
-    String Cliente, fecha, valor, material;
+    String Cliente, Fecha, Descripcion, Direccion;
 
-    public Pedido(String cliente, String fecha, String valor, String material) {
-        Cliente = cliente;
-        this.fecha = fecha;
-        this.valor = valor;
-        this.material = material;
+    public Pedido(){}
+
+    public Pedido(String cliente, String fecha, String descripcion, String direccion) {
+        this.Cliente = cliente;
+        this.Fecha = fecha;
+        this.Descripcion = descripcion;
+        this.Direccion = direccion;
     }
 
     public String getCliente() {
@@ -20,26 +22,26 @@ public class Pedido {
     }
 
     public String getFecha() {
-        return fecha;
+        return Fecha;
     }
 
     public void setFecha(String fecha) {
-        this.fecha = fecha;
+        Fecha = fecha;
     }
 
-    public String getValor() {
-        return valor;
+    public String getDescripcion() {
+        return Descripcion;
     }
 
-    public void setValor(String valor) {
-        this.valor = valor;
+    public void setDescripcion(String descripcion) {
+        Descripcion = descripcion;
     }
 
-    public String getMaterial() {
-        return material;
+    public String getDireccion() {
+        return Direccion;
     }
 
-    public void setMaterial(String material) {
-        this.material = material;
+    public void setDireccion(String direccion) {
+        Direccion = direccion;
     }
 }

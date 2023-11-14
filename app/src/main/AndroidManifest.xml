@@ -15,6 +15,12 @@
         android:theme="@style/Theme.AridosManolo"
         tools:targetApi="34">
         <activity
+            android:name=".New_Pedido"
+            android:exported="false" />
+        <activity
+            android:name=".New_Encargo"
+            android:exported="false" />
+        <activity
             android:name=".Edit_Inventario"
             android:exported="false" />
         <activity

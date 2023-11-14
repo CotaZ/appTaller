@@ -26,7 +26,6 @@ public class New_Cliente extends AppCompatActivity {
     private EditText nombre, telefono, email, direccion;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

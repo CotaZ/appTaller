@@ -40,12 +40,11 @@
 
         </LinearLayout>
 
-        <LinearLayout
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/Recy_Pedidos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-        </LinearLayout>
+            android:layout_weight="1" />
 
         <Space
             android:layout_width="match_parent"
@@ -55,7 +54,7 @@
         <Button
             android:id="@+id/btn_AgregarPedido"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="70dp"
             android:layout_weight="0"
             android:autoText="false"
             android:backgroundTint="#00FFFFFF"
